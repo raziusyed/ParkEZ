@@ -1,0 +1,147 @@
+<!--
+The <!DOCTYPE html> is an instruction to the web browser about what version the HTML is written in
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Search
+    </title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="myscript.js">
+    </script>
+
+    <!--
+    Allows for the use of third-party fonts
+    -->
+
+    <link href="a1stylesheet.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <header>
+        ParkEZ
+    </header>
+    <!--
+    Navigation menu, with links to other pages of the website
+    -->
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="register.html">Register</a>
+        <a href="submission.html">Submit a Spot</a>
+        <a href="requests.html">View Requests</a>
+        <a href="history.html">History</a>
+    </nav>
+    <br />
+    <br />
+    <!--
+    The main content of the page
+    -->
+    <main>
+        <!--
+        An element which is used to collect input from the user. It contains different kinds of form elements
+        -->
+        <form action="results.html" onsubmit="return validateSearch(this)">
+
+
+            <!--
+            This is simply a label for one of the form elements. I'm putting it in a class because I want to format
+            all labels in a particular way in my CSS file.
+            -->
+            <div class="boxlabel">
+                <!--
+                The for="address" specifies that this label is specifically bound to the form element with id="address"
+                -->
+                <label for="address"> Where would you like to park?</label><br />
+            </div>
+            <!--
+            The type="text" specifies that this is a text input element.
+            The id="address" specifies a unique id called "address" for this particular form element.
+            The name="address" The name attribute is used to represent the data that is entered when the form is submitted.
+            Placeholder is where you can have text to hint at what is supposed to be typed. It is not actually typed and is
+            just there in the background.
+            -->
+            <input type="text" id="address" name="address" value="" placeholder="Enter Address..."
+            pattern="\d{1,5}\s(\b\w*\b\s){1,2}\w+(\.)?" title="Address must follow the format:
+            123 Parking St. or 123 Parking Street" required><br />
+
+            <br />
+
+            <button type="button" onclick="getLocation()">Use Current Location</button>
+
+            <div class="boxlabel">
+                <label for="long">Longitude</label><br />
+            </div>
+            <input type="text" id="long" name="longitude" value="" placeholder="Longitude..." pattern="-?\d{1,3}\.\d+"
+            title = "Longitude must be of the format 12.456 and can start with -" required><br />
+
+            <div class="boxlabel">
+                <label for="lat">Latitude</label><br />
+            </div>
+            <input type="text" id="lat" name="latitude" value="" placeholder="Latitude..." pattern="-?\d{1,3}\.\d+"
+            title = "Latitude must be of the format 12.456 and can start with -" required><br />
+
+            <div class="boxlabel">
+                <label for="distance"> How far are you willing to travel? </label><br />
+            </div>
+            <!--
+            Using select is a way to make a drop down list, with <option...></option> being a choice available to the user
+            -->
+            <select id="distance" name="distance">
+                <option value="" disabled selected>Select Distance...</option>
+                <option value="5">5 km</option>
+                <option value="10">10 km</option>
+                <option value="25">25 km</option>
+                <option value="50">50 km</option>
+                <option value="100">100 km</option>
+            </select><br />
+
+            <div class="boxlabel">
+                <label for="rating"> What are your minimum standards? </label><br />
+            </div>
+
+            <select id="rating" name="rating">
+                <option value="" disabled selected>Select Rating...</option>
+                <!--
+                The &#x2605; is a special character representing a star (&#x2606; is an unfilled start)
+                -->
+                <option value="1">&#x2605;</option>
+                <option value="2">&#x2605;&#x2605;</option>
+                <option value="3">&#x2605;&#x2605;&#x2605;</option>
+                <option value="4">&#x2605;&#x2605;&#x2605;&#x2605;</option>
+                <option value="5">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</option>
+            </select><br />
+
+            <div class="boxlabel">
+                <label for="minmax"> What's your price range? </label><br />
+            </div>
+
+            <div id="minmax">
+                <input type="text" id="min" name="minimum" value="" placeholder="$Min" pattern="\d*"
+                title="Minimum price must be a number" required><br />
+                <input type="text" id="max" name="maximum" value="" placeholder="$Max" pattern="\d*"
+                title="Maximum price must be a number" required>
+            </div>
+            <br />
+            <br />
+            <input type="submit" value="Submit">
+            <br />
+            <br />
+            <br />
+        </form>
+    </main>
+    <br />
+    <br />
+    <footer>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results</title>
+    <link href="a1stylesheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="myscript.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEMWa-_LrXxB2LPyJGMpOzEzl-0O0y9QQ&callback=initMapResults" async defer></script>
+</head>
+
+<body>
+    <header>
+        ParkEZ
+    </header>
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="register.html">Register</a>
+        <a href="submission.html">Submit a Spot</a>
+        <a href="requests.html">View Requests</a>
+        <a href="history.html">History</a>
+    </nav>
+    <main>
+        <br />
+        <br />
+        <!--
+        Created an empty div where I will be placing my map
+        -->
+        <div class ="map" id="map_results"></div>
+
+
+        <br />
+        <!--
+        Title of the table
+        -->
+        <div class="TableCaption">
+            Here's what we found...
+        </div>
+        <p class="sampletext">(Click A to see a sample parking spot page)</p>
+        <!--
+        This is a table created using <div> rather than the html <table> tag, to provide
+        a more responsive design
+        -->
+        <div class="Table">
+            <!--
+            The TableBody class contains the row classes
+            -->
+            <div class="TableBody">
+                <!--
+                The row classes contain cell classes to indicate cells that make up the row.
+                Immediately below is the first row, the header row.
+                -->
+                <div class="TableHeaders">
+                    <div class="TableCell">Label</div>
+                    <div class="TableCell">Distance</div>
+                    <div class="TableCell">Average Rating</div>
+                    <div class="TableCell">Price</div>
+                </div>
+                <!--
+                This rest of the rows contain information pertaining to each parking spot
+                -->
+                <div class="TableRow">
+                    <!--
+                    This link points to a page of a sample parking spot
+                    -->
+                    <div class="TableCell"><a href="parking.html">A</a></div>
+                    <div class="TableCell">3.3 km</div>
+                    <div class="TableCell">2/5</div>
+                    <div class="TableCell">$3.00</div>
+                </div>
+                <div class="TableRow">
+                    <div class="TableCell">B</div>
+                    <div class="TableCell">5.4 km</div>
+                    <div class="TableCell">1/5</div>
+                    <div class="TableCell">$6.00</div>
+                </div>
+                <div class="TableRow">
+                    <div class="TableCell">C</div>
+                    <div class="TableCell">12.2 km</div>
+                    <div class="TableCell">5/5</div>
+                    <div class="TableCell">$10.00</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br />
+    <br />
+    <footer>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+</body>
+
+</html>

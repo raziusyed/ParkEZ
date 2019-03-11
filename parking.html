@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking</title>
+    <link href="a1stylesheet.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Add-on Task 1: Facebook metadata -->
+    <meta property="og:image" content="/og-image.jpg">
+    <meta property="og:image:width" content="1623">
+    <meta property="og:image:height" content="850">
+    <meta property="og:description" content="Find parking near you at the best price! Search thousands of locations and read reviews before making the best choice!">
+    <meta property="og:title" content="Parking">
+    <meta property="og:url" content="http://example.com">
+    <meta name="twitter:card" content="summary"></meta>
+    <!--
+    Add on Task 1: For iOS, Android and other platforms.
+    Generated using favicon.
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript" src="myscript.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEMWa-_LrXxB2LPyJGMpOzEzl-0O0y9QQ&callback=initMapParking" async defer></script>
+
+</head>
+<body>
+
+    <header>
+        ParkEZ
+    </header>
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="register.html">Register</a>
+        <a href="submission.html">Submit a Spot</a>
+        <a href="requests.html">View Requests</a>
+        <a href="history.html">History</a>
+    </nav>
+    <main>
+        <!--
+        I gave all of the parking information an id because I want to modify the whole thing together in my CSS
+        -->
+        <div id="parkinginfo">
+            <br />
+            <br />
+            <!--
+            Add-on Task 1: microdata
+
+            Using the place microdata schema to format the address so advanced web parsers know where it is geographically located
+            -->
+            <div class="Address">
+                <h1> Address: </h1>
+                <div class="event-venue" itemprop="location" itemscope itemtype="http://schema.org/Place">
+                    <span itemprop="name">Imperial Parking Canada Corporation</span>
+                    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">206 Simcoe St</span><br>
+                        <span itemprop="addressLocality">Toronto</span>,
+                        <span itemprop="addressRegion">ON</span>
+                        <span itemprop="postalCode">M5T 3M3</span>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+
+            <div class="map" id="map_parking"></div>
+
+            <!--
+            Using width as 1780 to match the width of the picture so that things look symmetrical.
+            -->
+            <video class="reg_vid" controls>
+                <source src="parkinglot.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+        <!--
+        I gave all the information pertaining to rating an id so I could modify it in my CSS
+        -->
+        <div id="ratings">
+            <!--
+            Put the title in a seperate class since I wanted to format it differently in CSS
+            -->
+            <div class="RatingsCaption">
+                <h2> <u>Ratings and Reviews</u> </h2>
+            </div>
+
+            <!--
+            Add-on Task 1: microdata
+
+            I formatted the reviews using the review schema so the web parsers can recognize them as reviews
+            -->
+
+            <div class="review">
+                <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+                    <span itemprop="name">Minor nuisance</span><br />
+                    <span class="rating">&#x2605;&#x2605;&#x2605;&#x2606;&#x2606;</span>
+                    <span itemprop="ratingValue">(3</span> stars out of
+                    <span itemprop="bestRating">5</span>)<br /><br />
+                    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                        <meta itemprop="worstRating" content = "1">
+                    </div>
+                    <span itemprop="description">It was a nice parking spot. A little hard to find since there
+                    were no markings, but worth it for the price.</span><br /><br />
+                    &mdash; by <span itemprop="author">Afzal</span>,
+                    <meta itemprop="datePublished" content="2018-01-31">January 31, 2018
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <div class="review">
+                <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+                    <span itemprop="name">Good luck finding your car!</span><br />
+                    <span class="rating">&#x2605;&#x2605;&#x2606;&#x2606;&#x2606;</span>
+                    <span itemprop="ratingValue">(2</span> stars out of
+                    <span itemprop="bestRating">5</span>)<br /><br />
+                    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                        <meta itemprop="worstRating" content = "1">
+                    </div>
+                    <span itemprop="description">You will not find your car! This place
+                    is literally a maze! Only reason I'm giving it two stars is
+                    because of the price.</span><br /><br />
+                    &mdash; by <span itemprop="author">Ali</span>,
+                    <meta itemprop="datePublished" content="2018-03-22">March 22, 2018
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <div class="review">
+                <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+                    <span itemprop="name">Do not park here!</span><br />
+                    <span class="rating">&#x2605;&#x2606;&#x2606;&#x2606;&#x2606;</span>
+                    <span itemprop="ratingValue">(1</span> stars out of
+                    <span itemprop="bestRating">5</span>)<br /><br />
+                    <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                        <meta itemprop="worstRating" content = "1">
+                    </div>
+                    <span itemprop="description">It took me a good half hour to find my car.
+                    Will not be parking here again!</span><br /><br />
+                    &mdash; by <span itemprop="author">Bilal</span>,
+                    <meta itemprop="datePublished" content="2018-04-02">April 2, 2018
+                </div>
+            </div>
+        </div>
+</main>
+<br />
+<br />
+    <footer>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+</body>
+</html>

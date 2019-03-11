@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Submission
+    </title>
+    <link href="a1stylesheet.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="myscript.js">
+    </script>
+</head>
+<body>
+    <header>
+        ParkEZ
+    </header>
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="register.html">Register</a>
+        <a href="submission.html">Submit a Spot</a>
+        <a href="requests.html">View Requests</a>
+        <a href="history.html">History</a>
+    </nav>
+    <main>
+        <h1>Submit your own spot!</h1>
+        <!--
+        See description of form and form elements in search.html
+        -->
+        <form onsubmit="return validateSubmission(this)">
+            <div class="boxlabel">
+                <label for="spotname">What's the name of the spot?</label><br />
+            </div>
+            <input type="text" id="spotname" name="spotname" placeholder="Spot Name..."
+            pattern="\w{5,}" title="Spot name must consist of letters, numbers, or _, and be at least 5 characters long" required><br />
+
+            <div class="boxlabel">
+                <label for="desc">Description:</label>
+            </div>
+
+            <input type="text" id="desc" name="description" value="" placeholder="Type your description here..."
+            pattern=".{10,}" title="Description must be at least 10 characters long" required><br />
+
+            <br />
+            <button type="button" onclick="getLocation()">Use Current Location</button>
+
+            <div class="boxlabel">
+                <label for="long">Longitude</label><br />
+            </div>
+            <input type="text" id="long" name="longitude" value="" placeholder="Longitude..." pattern="-?\d{1,3}\.\d+"
+            title = "Longitude must be of the format 12.456 and can start with -" required><br />
+
+            <div class="boxlabel">
+                <label for="lat">Latitude</label><br />
+            </div>
+            <input type="text" id="lat" name="latitude" value="" placeholder="Latitude..." pattern="-?\d{1,3}\.\d+"
+            title = "Latitude must be of the format 12.456 and can start with -" required><br />
+
+            <div class="boxlabel">
+                <label for="file">Upload an image</label><br />
+            </div>
+            <input type="file" id="file" name="file" value=""/><br />
+
+            <div class="boxlabel">
+                <label for="file">Upload a video</label><br />
+            </div>
+            <input type="file" id="file" name="file" value=""/><br />
+            <br />
+            <br />
+            <input type="submit" value="Submit">
+            <br />
+            <br />
+            <br />
+        </form>
+    </main>
+    <br />
+    <br />
+    <footer>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+</body>
+</html>

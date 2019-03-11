@@ -1,0 +1,219 @@
+/*
+Note: I've made comments for any new properties that I use. I do not repeat comments for properties I've already described, even if
+they appear in multiple selectors
+*/
+
+
+
+/*
+@import allows to externally implement a third party font
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/*
+used * so that I can apply the font to every bit of text in all of my webpages
+*/
+
+* {
+    font-family: 'Anton', sans-serif;
+}
+
+/*
+used text-align: center; to center all text in the header
+used padding-top: 10px; to create some room on the top
+used -10px for margin because the background actually wasn't reaching to the end of the pages, this adjust the header so it does
+used font-size: to increase font size
+used background-color to change the background color
+used color to change the text color
+*/
+
+header {
+    text-align: center;
+    padding-top: 10px;
+    margin: -10px;
+    font-size: 40pt;
+    font-style: italic;
+    background-color: black;
+    color: yellow;
+}
+
+nav, footer {
+    background-color: black;
+    margin: -10px;
+    padding: 10px;
+}
+
+
+nav a, form a, footer a, .form a {
+    color: yellow;
+    padding: 10px;
+    font-size: 20px;
+}
+
+body {
+    background-color: yellow;
+}
+
+/*
+used margin auto so that browser can calculate the appropriate margins
+used width 60% because I want the form to only be only 60% of its original width
+used border radius to round the edges of the form
+*/
+
+form, .form {
+    background-color: black;
+    color: yellow;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/*
+What to display when the input is invalid
+*/
+
+input:invalid {
+    background-color: #ffcccc;
+}
+
+/*
+What to display when a required field has not been filled
+*/
+
+input:required {
+    border-color: red;
+    border-width: 1px;
+}
+
+#resultspicture {
+    text-align: center;
+}
+
+/*
+specification of the maps
+*/
+
+.map, #map_parking, #map_results {
+    height: 500px;
+    width: 1000px;
+    border: 10px solid black;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#infowindow-content {
+  display: inline;
+}
+
+/*
+used commas because I want all of these elements to look similar.
+used [] to specify exactly which input types I'm referring to.
+*/
+
+input[type=text], select, input[type=date], input[type=email], input[type=password], textarea{
+    width: 40%;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 4px;
+}
+
+.reg_pic, .reg_vid {
+    border: 10px solid black;
+    max-width: 79%;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/*
+used margin-left and margin-right auto in order to center the ratings div
+*/
+
+#ratings {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#parkinginfo {
+    text-align: center;
+}
+
+/*
+This is referring to the titles of the reviews which I also want to look similar
+*/
+
+span[itemprop="name"] {
+    font-size: 35px;
+}
+
+h1, .sampletext {
+    text-align: center;
+}
+
+/*
+used a class for label because I want all labels for the form elements to look similar
+*/
+
+.boxlabel {
+    font-size: 45px;
+    padding: 30px;
+}
+
+.RatingsCaption {
+    font-size: 40px;
+}
+
+.main img {
+    max-width: 75%;
+}
+
+.TableCaption {
+    text-align: center;
+    font-size: 40px;
+}
+
+.Table{
+	display: table;
+	width: 100%;
+}
+
+/*
+display basically means "behave like". So my Table row div class is behaving like an html table row
+*/
+
+.TableRow {
+	display: table-row;
+}
+
+.TableHeaders {
+    display: table-row;
+    font-size: 25px;
+    background: black;
+    color: yellow;
+}
+
+
+/*
+The #999999 color is a gray color I used to outline the table cells
+The cell is behaving like an html table cell
+*/
+
+.TableCell {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.TableBody {
+	display: table-row-group;
+}

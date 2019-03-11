@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Register
+    </title>
+    <link href="a1stylesheet.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+    <header>
+        ParkEZ
+    </header>
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="register.html">Register</a>
+        <a href="submission.html">Submit a Spot</a>
+        <a href="requests.html">View Requests</a>
+        <a href="history.html">History</a>
+    </nav>
+    <main>
+        <h1>Register Below!</h1>
+        <!--
+        See description of form and form elements in search.html
+        -->
+        <form onsubmit="return validateRegistration(this)" novalidate>
+            <div class="boxlabel">
+                <label for="fname">First Name:</label><br />
+            </div>
+            <input type="text" id="fname" name="firstname" value="" placeholder="First Name..."
+            pattern="[A-Za-z]{2,}" title="First name must be at least 2 letters long and contain
+            only letters" required><br />
+
+            <div class="boxlabel">
+                <label for="fname">Last Name:</label><br />
+            </div>
+            <input type="text" id="lname" name="lastname" value="" placeholder="Last Name..."
+            pattern="[A-Za-z]{2,}" title="Last name must be at least 2 letters long and contain
+            only letters" required><br />
+
+            <div class="boxlabel">
+                <label for="user">Username:</label><br />
+            </div>
+            <input type="text" id="user" name="username" value="" placeholder="Username..."
+            pattern="[\w\d]{5,}" title="Username must be at least 5 characters long and can
+            only contain letters, numbers and _." required><br />
+
+            <div class="boxlabel">
+                <label for="email">Email:</label><br />
+            </div>
+            <input type="email" id="email" name="email" value="" placeholder="Email Address..."
+            pattern="[^@]+@[^@]+\.[A-Za-z]{2,}" title="Email must be of format bob@somethingmail.com"
+            required><br />
+
+            <div class="boxlabel">
+                <label for="pword">Password:</label><br />
+            </div>
+            <input type="password" id="pword" name="password" value="" placeholder="Password..."
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{7,}" title="Password must contain at least one upper case,
+            one lower case, and one number and be at least 7 characters long. No special
+            characters are allowed except underscores." required><br />
+
+            <br />
+            <input type="submit" value="Submit">
+            <br />
+            <br />
+            <br />
+        </form>
+    </main>
+    <br />
+    <br />
+    <footer>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+</body>
+</html>
